@@ -1,0 +1,20 @@
+{% schema %}
+    {
+      "name": "Custom Header",
+      "settings": [
+        {
+          "type": "text",
+          "id": "header_text",
+          "label": "Header Text",
+          "default": "Welcome to our store!"
+        }
+      ]
+    }
+    {% endschema %}
+    
+    <header class="custom-header">
+      <div class="container">
+        <h1>{{ section.settings.header_text }}</h1>
+      </div>
+    </header>
+    
