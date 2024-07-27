@@ -1,12 +1,55 @@
 {% schema %}
     {
-      "name": "Header",
+      "name": "Main Header",
       "settings": [
         {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
           "type": "text",
-          "id": "header_text",
+          "id": "header_title",
           "label": "Header Title",
           "default": "Welcome to Our Store"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "announcement",
+          "name": "Announcement Bar",
+          "settings": [
+            {
+              "type": "text",
+              "id": "announcement_text",
+              "label": "Announcement Text",
+              "default": "Free shipping on orders over $50!"
+            },
+            {
+              "type": "url",
+              "id": "announcement_link",
+              "label": "Announcement Link",
+              "default": "/collections/all"
+            }
+          ]
+        },
+        {
+          "type": "custom_header",
+          "name": "Custom Header",
+          "settings": [
+            {
+              "type": "text",
+              "id": "custom_header_text",
+              "label": "Custom Header Text",
+              "default": "Shop the latest collections!"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Main Header",
+          "category": "Header"
         }
       ]
     }
@@ -14,8 +57,63 @@
     
     <header class="site-header">
       <div class="header-logo">
-        <p><header></header></p>
+        <p>heder</p>
       </div>
-      <h1>{{ section.settings.header_text }}</h1>
+      <h1>{{ section.settings.header_title }}</h1>
+    
+      {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'announcement' %}
+          <div class="announcement-bar">
+            <a href="{{ block.settings.announcement_link }}">
+              {{ block.settings.announcement_text }}
+            </a>
+          </div>
+        {% when 'custom_header' %}
+          <div class="custom-header">
+            <p>{{ block.settings.custom_header_text }}</p>
+          </div>
+        {% endcase %}
+      {% endfor %}
     </header>
+    
+    {% stylesheet %}
+    .site-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #f8f9fa;
+    }
+    
+    .header-logo img {
+      max-width: 150px;
+      margin-bottom: 10px;
+    }
+    
+    .site-header h1 {
+      margin: 0 0 20px;
+      font-size: 24px;
+      color: #333;
+    }
+    
+    .announcement-bar {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+    }
+    
+    .announcement-bar a {
+      color: #fff;
+      text-decoration: none;
+    }
+    
+    .custom-header p {
+      margin: 0;
+      font-size: 18px;
+      color: #555;
+    }
+    {% endstylesheet %}
     
