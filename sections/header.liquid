@@ -1,12 +1,8 @@
 {% schema %}
     {
-      "name": "Main Header",
+      "name": "header",
       "settings": [
-        {
-          "type": "image_picker",
-          "id": "logo",
-          "label": "Logo"
-        },
+     
         {
           "type": "text",
           "id": "header_title",
@@ -48,7 +44,7 @@
       ],
       "presets": [
         {
-          "name": "Main Header",
+          "name": "header",
           "category": "Header"
         }
       ]
@@ -57,7 +53,7 @@
     
     <header class="site-header">
       <div class="header-logo">
-        <p>heder</p>
+        <p>hedaer</p>
       </div>
       <h1>{{ section.settings.header_title }}</h1>
     
@@ -76,44 +72,4 @@
         {% endcase %}
       {% endfor %}
     </header>
-    
-    {% stylesheet %}
-    .site-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      background-color: #f8f9fa;
-    }
-    
-    .header-logo img {
-      max-width: 150px;
-      margin-bottom: 10px;
-    }
-    
-    .site-header h1 {
-      margin: 0 0 20px;
-      font-size: 24px;
-      color: #333;
-    }
-    
-    .announcement-bar {
-      background-color: #333;
-      color: #fff;
-      text-align: center;
-      width: 100%;
-      padding: 10px 0;
-    }
-    
-    .announcement-bar a {
-      color: #fff;
-      text-decoration: none;
-    }
-    
-    .custom-header p {
-      margin: 0;
-      font-size: 18px;
-      color: #555;
-    }
-    {% endstylesheet %}
     

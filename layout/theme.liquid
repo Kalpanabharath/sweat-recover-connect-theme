@@ -3,13 +3,7 @@
     {{ content_for_header }}
  </head>
  <body>
-    <main id="main" role="main">
-     
-
-      {{ content_for_layout }}
-    
-     
-    </main>
-    
+  {% section 'header' %}
+  {{ content_for_layout }}
  </body>
 </html>
