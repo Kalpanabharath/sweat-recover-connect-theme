@@ -1,28 +1,21 @@
 {% schema %}
     {
-      "name": "Custom Header",
+      "name": "Header",
       "settings": [
-        {
-          "type": "checkbox",
-          "id": "show_header",
-          "label": "Show Header",
-          "default": true
-        },
         {
           "type": "text",
           "id": "header_text",
-          "label": "Header Text",
-          "default": "Welcome to our store!"
+          "label": "Header Title",
+          "default": "Welcome to Our Store"
         }
       ]
     }
     {% endschema %}
     
-    {% if section.settings.show_header %}
-    <header class="custom-header">
-      <div class="container">
-        <h1>{{ section.settings.header_text }}</h1>
+    <header class="site-header">
+      <div class="header-logo">
+        <p><header></header></p>
       </div>
+      <h1>{{ section.settings.header_text }}</h1>
     </header>
-    {% endif %}
     
