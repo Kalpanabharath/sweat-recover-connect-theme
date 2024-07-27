@@ -3,6 +3,12 @@
       "name": "Custom Header",
       "settings": [
         {
+          "type": "checkbox",
+          "id": "show_header",
+          "label": "Show Header",
+          "default": true
+        },
+        {
           "type": "text",
           "id": "header_text",
           "label": "Header Text",
@@ -12,9 +18,11 @@
     }
     {% endschema %}
     
+    {% if section.settings.show_header %}
     <header class="custom-header">
       <div class="container">
         <h1>{{ section.settings.header_text }}</h1>
       </div>
     </header>
+    {% endif %}
     
