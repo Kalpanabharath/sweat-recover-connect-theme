@@ -1,34 +1,32 @@
 <style>
-  .w-full-image{
-    width:100%;
-    height:auto;
+  .w-full-image {
+    width: 100%;
+    height: auto;
   }
-    .text-content {
-      font-size: 3rem;
-      font-family: cursive;
-      font-weight: 800;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-
+  .text-content {
+    font-size: 3rem;
+    font-family: cursive;
+    font-weight: 800;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
   }
-
-  .left-center{
-      align-items: center;
+  .left-center {
+    align-items: center;
     justify-content: flex-start;
   }
-  .center-center{
+  .center-center {
     align-items: center;
     justify-content: center;
   }
-  .top-left{
+  .top-left {
     align-items: flex-start;
     justify-content: flex-start;
   }
-    .bottom-center{
+  .bottom-center {
     align-items: flex-end;
     justify-content: center;
   }
@@ -49,61 +47,61 @@
 
 {% schema %}
 {
-   "name": "slideshow"
-   "settings": [
-     {
-       "type": "image_picker",
-       "id": "image",
-       "label": "Image"
-     },
-     {
-       "type": "image_picker",
-       "id": "mobile_image",
-       "label": "Image"
-     },
-     {
-       "type": "select",
-       "id": "content_position",
-       "label": "Content position",
-       "options": [
-         {
-           "label": "Left center",
-           "value": "left-center"
-         },
-         {
-           "label": "Center center",
-           "value": "center-center"
-         },
-         {
-           "label": "Center center",
-           "value": "right-center"
-         },
-         {
-           "label": "Top left",
-           "value": "top-left"
-         },
-         {
-           "label": "Bottom center",
-           "value": "bottom-center"
-         }
-       ],
-       "default":"center-center"
-     },
-     {
-       "type": "color_background",
-       "id": "bgc",
-       "label": "BGC"
-     },
-     {
-       "type": "color",
-       "id": "color",
-       "label": "Text Color"
-     }
-   ],
-    "presets": [
-   {
-     "name": "slide-show"
-   }
- ]
- }
+  "name": "slideshow",  // Missing comma added here
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image" // Updated label to differentiate
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "label": "Content position",
+      "options": [
+        {
+          "label": "Left center",
+          "value": "left-center"
+        },
+        {
+          "label": "Center center",
+          "value": "center-center"
+        },
+        {
+          "label": "Right center", // Fixed duplicate label issue
+          "value": "right-center"
+        },
+        {
+          "label": "Top left",
+          "value": "top-left"
+        },
+        {
+          "label": "Bottom center",
+          "value": "bottom-center"
+        }
+      ],
+      "default": "center-center"
+    },
+    {
+      "type": "color_background",
+      "id": "bgc",
+      "label": "Background Color" // Clarified label for better understanding
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text Color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "slide-show"
+    }
+  ]
+}
 {% endschema %}
