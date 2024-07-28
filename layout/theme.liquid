@@ -1,10 +1,27 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+
+    <!-- Shopify Content for Header -->
     {{ content_for_header }}
- </head>
- <body>
-  {% sections 'header-group' %}
-  {{ content_for_layout }}
-  {% sections 'footer-group' %}
- </body>
+
+    <!-- Add custom stylesheets here -->
+    {{ 'base.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body>
+    <!-- Header Section -->
+    {% sections 'header-group' %}
+
+    <!-- Main Content -->
+    {{ content_for_layout }}
+
+    <!-- Footer Section -->
+    {% sections 'footer-group' %}
+
+    <!-- Add custom scripts here -->
+    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+  </body>
 </html>
