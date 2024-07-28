@@ -3,3 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+    font-family: 'ABeeZee';
+    src: url('https://cdn.shopify.com/s/files/1/0878/2997/1246/files/ABeeZee-Regular.ttf?v=1722144401') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
