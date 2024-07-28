@@ -1,10 +1,10 @@
 <style>
-  .w-full-image {
+  .full-width-image {
     width: 100%;
     height: auto;
   }
 
-  .text-content {
+  .banner-content {
     font-size: 3rem;
     font-weight: 800;
     position: absolute;
@@ -15,66 +15,76 @@
     display: flex;
   }
 
-  .top-left {
+  .align-top-left {
     align-items: flex-start;
     justify-content: flex-start;
   }
 
-  .top-center {
+  .align-top-center {
     align-items: flex-start;
     justify-content: center;
   }
 
-  .top-right {
+  .align-top-right {
     align-items: flex-start;
     justify-content: flex-end;
   }
 
-  .center-left {
+  .align-center-left {
     align-items: center;
     justify-content: flex-start;
   }
 
-  .center-center {
+  .align-center-center {
     align-items: center;
     justify-content: center;
   }
 
-  .center-right {
+  .align-center-right {
     align-items: center;
     justify-content: flex-end;
   }
 
-  .bottom-left {
+  .align-bottom-left {
     align-items: flex-end;
     justify-content: flex-start;
   }
 
-  .bottom-center {
+  .align-bottom-center {
     align-items: flex-end;
     justify-content: center;
   }
 
-  .bottom-right {
+  .align-bottom-right {
     align-items: flex-end;
     justify-content: flex-end;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid currentColor;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
   }
 </style>
 
-<div class="isolate">
-  <div class="image-wrap">
+<div class="image-banner">
+  <div class="image-container">
     {% render 'responsive-picture',
       desktopImage: section.settings.image,
       mobileImage: section.settings.mobile_image,
-      img-class: 'w-full-image'
+      img-class: 'full-width-image'
     %}
   </div>
-  <div class="text-content {{ section.settings.content_position }}">
-    <div class="text" style="color:{{ section.settings.color }};">
+  <div class="banner-content {{ section.settings.content_position }}">
+    <div class="text-content" style="color:{{ section.settings.color }};">
       {{ section.settings.textcontent }}
     </div>
-    <div class="button-wrapper">
-      <a href="{{ section.settings.button_link }}" class="button" style="color:{{ section.settings.button_color }};">
+    <div class="button-container">
+      <a href="{{ section.settings.button_link }}" class="cta-button" style="color:{{ section.settings.button_color }};">
         {{ section.settings.button_text }}
       </a>
     </div>
@@ -83,7 +93,7 @@
 
 {% schema %}
 {
-  "name": "Banner image",
+  "name": "Banner Image",
   "settings": [
     {
       "type": "image_picker",
@@ -98,52 +108,52 @@
     {
       "type": "select",
       "id": "content_position",
-      "label": "Content position",
+      "label": "Content Position",
       "options": [
         {
           "label": "Top Left",
-          "value": "top-left"
+          "value": "align-top-left"
         },
         {
           "label": "Top Center",
-          "value": "top-center"
+          "value": "align-top-center"
         },
         {
           "label": "Top Right",
-          "value": "top-right"
+          "value": "align-top-right"
         },
         {
           "label": "Center Left",
-          "value": "center-left"
+          "value": "align-center-left"
         },
         {
           "label": "Center Center",
-          "value": "center-center"
+          "value": "align-center-center"
         },
         {
           "label": "Center Right",
-          "value": "center-right"
+          "value": "align-center-right"
         },
         {
           "label": "Bottom Left",
-          "value": "bottom-left"
+          "value": "align-bottom-left"
         },
         {
           "label": "Bottom Center",
-          "value": "bottom-center"
+          "value": "align-bottom-center"
         },
         {
           "label": "Bottom Right",
-          "value": "bottom-right"
+          "value": "align-bottom-right"
         }
       ],
-      "default": "center-center"
+      "default": "align-center-center"
     },
     {
       "type": "richtext",
       "id": "textcontent",
       "label": "Text Content",
-      "default": "<h2> this is rechtext </h2>"
+      "default": "<h2>This is rich text</h2>"
     },
     {
       "type": "color",
@@ -170,7 +180,7 @@
   ],
   "presets": [
     {
-      "name": "Banner image"
+      "name": "Banner Image"
     }
   ]
 }
