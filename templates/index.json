@@ -20,9 +20,17 @@
         "button_text": "JOIN US",
         "button_color": "#fefefe"
       }
+    },
+    "hover_states_qct7dC": {
+      "type": "hover-states",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_73.png",
+        "mobile_image": "shopify:\/\/shop_images\/Rectangle_73_mbl.png"
+      }
     }
   },
   "order": [
-    "slideshow"
+    "slideshow",
+    "hover_states_qct7dC"
   ]
 }
