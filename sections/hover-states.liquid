@@ -3,19 +3,21 @@
     width:100%;
     height:auto;
   }
-    .slideshow-container {
+    .slideshow-text-container {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      color:red;
+      
      
 
   }
 
 </style>
 
-<div class="isolate">
+<div class="slideshow-cotainer">
   <div class="image-wrap">
     {% render 'responsive-picture',
       desktopImage: section.settings.image,
@@ -23,7 +25,7 @@
       img-class: 'w-full-image'
     %}
   </div>
-  <div class="slideshow-container">
+  <div class="slideshow-text-container">
     <p>its working</p>
   </div>
 </div>
