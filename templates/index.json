@@ -13,11 +13,12 @@
       "type": "slideshow",
       "settings": {
         "image": "shopify:\/\/shop_images\/Rectangle_90.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Rectangle_90_mbl.jpg",
         "content_position": "align-center-center",
         "textcontent": "<p>SWEAT.<\/p><p> RECOVER.<\/p><p>CONNECT.<\/p>",
-        "color": "#ebdddd",
+        "color": "#ffffff",
         "button_text": "JOIN US",
-        "button_color": ""
+        "button_color": "#fefefe"
       }
     }
   },
