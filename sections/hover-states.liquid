@@ -1,26 +1,84 @@
 <style>
-  .w-full-image{
-    width:100%;
-    height:auto;
+  .w-full-image {
+    width: 100%;
+    height: auto;
   }
-  .slideshow-cotainer{
+
+  .slideshow-container {
     position: relative;
   }
-    .slideshow-text-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      color:red;
-      
-     
 
+  .slideshow-text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    font-family: 'ABeeZee', sans-serif;
   }
 
+  .slideshow-text-container>* {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures even distribution */
+    padding: 20px;
+  }
+
+  .container-text {
+    
+    display: flex;
+    justify-content: flex-end;
+    padding: 3%;
+    text-transform: uppercase;
+    color:white;
+  }
+
+  .hover-state-text-one {
+    font-size: clamp(10px, 0.8vw, 15px);
+    margin: 0;
+  }
+
+  .hover-state-text-two {
+    font-size: clamp(10px, 0.9vw, 15px);
+    text-transform: none;
+    margin: 0;
+  }
+
+  .hover-state-richtext {
+    font-size: clamp(20px, 4vw, 40px);
+    margin: 0;
+  }
+
+  .hover-state-button {
+    border: none;
+    padding: 10px 20px;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    width: fit-content;
+    text-transform: uppercase;
+    align-self: start; /* Ensures the button doesn't stretch */
+  }
+
+  .text-content-container {
+    width: 70%;
+    height: 30%;
+    
+  }
+
+  .text-content-align {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Fills the entire box */
+  }
 </style>
 
-<div class="slideshow-cotainer">
+<div class="slideshow-container">
   <div class="image-wrap">
     {% render 'responsive-picture',
       desktopImage: section.settings.image,
@@ -29,31 +87,71 @@
     %}
   </div>
   <div class="slideshow-text-container">
-    <p>its working</p>
+    <div class="container-text">
+      <div class="text-content-container">
+        <div class="text-content-align">
+          <div class="hover-state-text-one">
+            {{ section.settings.text_before }}
+          </div>
+          <div class="hover-state-richtext">
+            {{ section.settings.richtext }}
+          </div>
+          <div class="hover-state-text-two">
+            {{ section.settings.text_after }}
+          </div>
+          <button class="hover-state-button">
+            {{ section.settings.button_text }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container-block"></div>
   </div>
 </div>
 
-
 {% schema %}
 {
-   "name": "slideshow",
-   "settings": [
-     {
-       "type": "image_picker",
-       "id": "image",
-       "label": "Image"
-     },
-     {
-       "type": "image_picker",
-       "id": "mobile_image",
-       "label": "Image"
-     }
-     
-   ],
-    "presets": [
-   {
-     "name": "slideshow"
-   }
- ]
- }
+  "name": "Hover State",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "text_before",
+      "label": "Text Before",
+      "default": "FITNESS & WORKOUT"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Rich Text",
+      "default": "<p>over 200 inclusive <br> classes weekly</p>"
+    },
+    {
+      "type": "text",
+      "id": "text_after",
+      "label": "Text After",
+      "default": "Full-service premium amenities. Just bring you, and we do the rest!"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "book classes"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hover State"
+    }
+  ]
+}
 {% endschema %}
