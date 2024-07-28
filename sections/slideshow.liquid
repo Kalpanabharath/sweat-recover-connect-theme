@@ -14,6 +14,8 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    font-family: 'ABeeZee', sans-serif;
+    
   }
 
   .align-top-left {
@@ -60,15 +62,18 @@
     align-items: flex-end;
     justify-content: flex-end;
   }
+  .text-content{
+    font-size: clamp(15px, 3vw, 50px);
+    letter-spacing: 1vw;
+  }
 
   .cta-button {
     padding: 10px 20px;
     background-color: transparent;
-    border: 2px solid currentColor;
-    font-weight: bold;
+    border: 1px solid white;
     margin-top: 20px;
     cursor: pointer;
-    color: inherit;
+    color: white;
   }
 </style>
 
@@ -165,7 +170,7 @@
       "type": "text",
       "id": "button_text",
       "label": "Button Text",
-      "default": "Click Here"
+      "default": "JOIN US"
     },
     {
       "type": "color",
