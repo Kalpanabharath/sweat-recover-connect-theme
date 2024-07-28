@@ -1,0 +1,70 @@
+<style>
+  .w-full-image{
+    width:100%;
+    height:auto;
+  }
+    .text-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+     
+
+  }
+
+  .left-center{
+      align-items: center;
+    justify-content: flex-start;
+  }
+  .center-center{
+    align-items: center;
+    justify-content: center;
+  }
+  .top-left{
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+    .bottom-center{
+    align-items: flex-end;
+    justify-content: center;
+  }
+</style>
+
+<div class="isolate">
+  <div class="image-wrap">
+    {% render 'responsive-picture',
+      desktopImage: section.settings.image,
+      mobileImage: section.settings.mobile_image,
+      img-class: 'w-full-image'
+    %}
+  </div>
+  <div class="slideshow-container">
+    <p>its working</p>
+  </div>
+</div>
+
+
+{% schema %}
+{
+   "name": "slideshow",
+   "settings": [
+     {
+       "type": "image_picker",
+       "id": "image",
+       "label": "Image"
+     },
+     {
+       "type": "image_picker",
+       "id": "mobile_image",
+       "label": "Image"
+     }
+     
+   ],
+    "presets": [
+   {
+     "name": "slideshow"
+   }
+ ]
+ }
+{% endschema %}
