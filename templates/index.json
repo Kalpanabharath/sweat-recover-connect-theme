@@ -13,8 +13,11 @@
       "type": "slideshow",
       "settings": {
         "image": "shopify:\/\/shop_images\/Rectangle_90.jpg",
-        "content_position": "center-center",
-        "color": "#ebdddd"
+        "content_position": "align-center-center",
+        "textcontent": "<h2>This is rich text<\/h2>",
+        "color": "#ebdddd",
+        "button_text": "Click Here",
+        "button_color": ""
       }
     }
   },
