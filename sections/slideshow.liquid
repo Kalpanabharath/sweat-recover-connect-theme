@@ -67,10 +67,10 @@
     padding: 10px 20px;
     background-color: transparent;
     border: 2px solid currentColor;
-    text-decoration: none;
     font-weight: bold;
-    display: inline-block;
     margin-top: 20px;
+    cursor: pointer;
+    color: inherit;
   }
 </style>
 
@@ -87,9 +87,9 @@
       {{ section.settings.textcontent }}
     </div>
     <div class="button-container">
-      <a href="{{ section.settings.button_link }}" class="cta-button" style="color:{{ section.settings.button_color }};">
+      <button class="cta-button" style="color:{{ section.settings.button_color }};">
         {{ section.settings.button_text }}
-      </a>
+      </button>
     </div>
   </div>
 </div>
@@ -168,12 +168,6 @@
       "id": "button_text",
       "label": "Button Text",
       "default": "Click Here"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "Button Link",
-      "default": ""
     },
     {
       "type": "color",
