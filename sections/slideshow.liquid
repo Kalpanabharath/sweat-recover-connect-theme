@@ -1,0 +1,109 @@
+<style>
+  .w-full-image{
+    width:100%;
+    height:auto;
+  }
+    .text-content {
+      font-size: 3rem;
+      font-family: cursive;
+      font-weight: 800;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+
+  }
+
+  .left-center{
+      align-items: center;
+    justify-content: flex-start;
+  }
+  .center-center{
+    align-items: center;
+    justify-content: center;
+  }
+  .top-left{
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+    .bottom-center{
+    align-items: flex-end;
+    justify-content: center;
+  }
+</style>
+
+<div class="isolate">
+  <div class="image-wrap">
+    {% render 'responsive-picture',
+      desktopImage: section.settings.image,
+      mobileImage: section.settings.mobile_image,
+      img-class: 'w-full-image'
+    %}
+  </div>
+  <div class="text-content {{ section.settings.content_position }} background-color--{{ section.id }}">
+    <div class="text" style="color:{{ section.settings.color }};">HI MY NAME IS KALPANA</div>
+  </div>
+</div>
+
+{% schema %}
+    {
+       "name": "Banner image",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+           "type": "image_picker",
+           "id": "mobile_image",
+           "label": "Image"
+         },
+         {
+           "type": "select",
+           "id": "content_position",
+           "label": "Content position",
+           "options": [
+             {
+               "label": "Left center",
+               "value": "left-center"
+             },
+             {
+               "label": "Center center",
+               "value": "center-center"
+             },
+             {
+               "label": "Center center",
+               "value": "right-center"
+             },
+             {
+               "label": "Top left",
+               "value": "top-left"
+             },
+             {
+               "label": "Bottom center",
+               "value": "bottom-center"
+             }
+           ],
+           "default":"center-center"
+         },
+         {
+           "type": "color_background",
+           "id": "bgc",
+           "label": "BGC"
+         },
+         {
+           "type": "color",
+           "id": "color",
+           "label": "Text Color"
+         }
+       ],
+        "presets": [
+       {
+         "name": "Banner image"
+       }
+     ]
+     }
+    {% endschema %}
