@@ -14,7 +14,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Rectangle_90.jpg",
         "content_position": "align-center-center",
-        "textcontent": "<h2>This is rich text<\/h2>",
+        "textcontent": "<p>SWEAT.<\/p><p> RECOVER.<\/p><p>CONNECT.<\/p>",
         "color": "#ebdddd",
         "button_text": "Click Here",
         "button_color": ""
