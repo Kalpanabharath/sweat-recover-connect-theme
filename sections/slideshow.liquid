@@ -1,165 +1,64 @@
-<div class="isolate">
-  <div class="image-wrap">
-    {% render 'responsive-picture',
-      desktopImage: section.settings.imageone,
-      mobileImage: section.settings.mobile_image,
-      img-class: 'w-full-image'
-    %}
-    <div class="text-content {{ section.settings.content_position }}">
-      <div class="text" style="color: {{ section.settings.color }};">
-        <div class="uppercase">{{ section.settings.main_text }}</div>
-        <div class="subtext">{{ section.settings.sub_text }}</div>
-      </div>
-    </div>
+<div
+  class="background-content-section"
+  style="background-image: url({{ section.settings.background_image | img_url: '1600x' }}); display: flex; flex-direction: column; justify-content: {{ section.settings.content_alignment }}; align-items: center; height: 500px; background-size: cover; text-align: center; padding: 20px;">
+  <div class="rich-text-content" style="margin-bottom: 20px;">
+    <p>{{ section.settings.rich_text_content }}</p>
+  </div>
+  <div class="button-container">
+    <a href="{{ section.settings.button_link }}" class="button" style="padding: 10px 20px; background-color: #333; color: #fff; text-decoration: none; border-radius: 5px;">{{ section.settings.button_text }}</a>
   </div>
 </div>
 
 <style>
-  .w-full-image {
-    width: 100%;
-    height: 100%;
-  }
-
-  .image-wrap {
-    display: flex;
-    position: relative; /* Positioning context for absolute children */
-    width: 100%;
-    height: 400px; /* Set a height for the background */
-    overflow: hidden; /* Hide overflow to ensure image fits */
-  }
-
-  .text-content {
-    font-size: 2rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .left-center {
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  .center-center {
-    align-items: center;
-    justify-content: center;
-  }
-
-  .right-center {
-    align-items: flex-end;
-    justify-content: center;
-  }
-
-  .top-left {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .top-center {
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .bottom-center {
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .uppercase {
-    text-transform: uppercase;
-    font-family: 'Cormorant', serif;
-    font-size: 28px;
-  }
-
-  .subtext {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  @media (max-width: 649px) {
-    .uppercase {
-      font-size: 20px;
-    }
-
-    .subtext {
-      font-size: 15px;
-    }
+  .background-content-section {
+    background-position: center;
   }
 </style>
-
 {% schema %}
-{
-  "name": "hero-section",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "imageone",
-      "label": "Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "mobile_image",
-      "label": "Mobile Image"
-    },
-    {
-      "type": "select",
-      "id": "content_position",
-      "label": "Content position",
-      "options": [
-        {
-          "label": "Left center",
-          "value": "left-center"
-        },
-        {
-          "label": "Center center",
-          "value": "center-center"
-        },
-        {
-          "label": "Top center",
-          "value": "top-center"
-        },
-        {
-          "label": "Right center",
-          "value": "right-center"
-        },
-        {
-          "label": "Top left",
-          "value": "top-left"
-        },
-        {
-          "label": "Bottom center",
-          "value": "bottom-center"
-        }
-      ],
-      "default": "center-center"
-    },
-    {
-      "type": "text",
-      "id": "main_text",
-      "label": "Main Text",
-      "default": "Pure ZARI Kanchipuram"
-    },
-    {
-      "type": "text",
-      "id": "sub_text",
-      "label": "Sub Text",
-      "default": "Shop Now"
-    },
-    {
-      "type": "color",
-      "id": "color",
-      "label": "Text Color",
-      "default": "#FFFFFF"
-    }
-  ],
-  "presets": [
-    {
-      "name": "herosection"
-    }
-  ]
-}
-{% endschema %}
+  {
+    "name": "Background Content Section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "rich_text_content",
+        "label": "Rich Text Content"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      },
+      {
+        "type": "select",
+        "id": "content_alignment",
+        "label": "Content Alignment",
+        "default": "center",
+        "options": [
+          {
+            "value": "flex-start",
+            "label": "Top"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "flex-end",
+            "label": "Bottom"
+          }
+        ]
+      }
+    ]
+  }
+  {% endschema %}
+  
