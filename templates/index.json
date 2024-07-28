@@ -12,11 +12,9 @@
     "slideshow": {
       "type": "slideshow",
       "settings": {
-        "imageone": "shopify:\/\/shop_images\/Rectangle_90.jpg",
+        "image": "shopify:\/\/shop_images\/Rectangle_90.jpg",
         "content_position": "center-center",
-        "main_text": "Pure ZARI Kanchipuram",
-        "sub_text": "Shop Now",
-        "color": "#FFFFFF"
+        "color": "#ebdddd"
       }
     }
   },
