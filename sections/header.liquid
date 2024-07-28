@@ -60,6 +60,14 @@
   width: 100vw;
   height: 10vh;
   padding: 0 3%;
+  position: fixed;
+  z-index: 5;
+
+}
+.navbar-alignment img {
+  width: 100%; /* Make the image take the full width of its container */
+  max-width: 100px; /* Set a maximum width to prevent it from becoming too large */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .header-content {
@@ -111,6 +119,15 @@
 @media screen and (max-width: 768px) {
   .logo.show-mobile {
     display: block; /* Show on mobile */
+  }
+  .button{
+    display: none;
+  }
+  .login p{
+    display: none;
+  }
+  .navbar-alignment img {
+    width: 50%;
   }
 }
 
