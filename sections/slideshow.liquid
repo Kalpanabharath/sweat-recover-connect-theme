@@ -1,5 +1,10 @@
 <div class="isolate">
-  <div class="image-wrap" style="background-image: url({{ section.settings.imageone | img_url }});">
+  <div class="image-wrap">
+    {% render 'responsive-picture',
+      desktopImage: section.settings.imageone,
+      mobileImage: section.settings.mobile_image,
+      img-class: 'w-full-image'
+    %}
     <div class="text-content {{ section.settings.content_position }}">
       <div class="text" style="color: {{ section.settings.color }};">
         <div class="uppercase">{{ section.settings.main_text }}</div>
@@ -20,8 +25,7 @@
     position: relative; /* Positioning context for absolute children */
     width: 100%;
     height: 400px; /* Set a height for the background */
-    background-size: cover; /* Cover the entire area */
-    background-position: center; /* Center the background image */
+    overflow: hidden; /* Hide overflow to ensure image fits */
   }
 
   .text-content {
@@ -77,10 +81,6 @@
   }
 
   @media (max-width: 649px) {
-    .image-wrap {
-      flex-direction: column;
-    }
-
     .uppercase {
       font-size: 20px;
     }
@@ -98,35 +98,40 @@
     {
       "type": "image_picker",
       "id": "imageone",
-      "label": "Background Image"
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
     },
     {
       "type": "select",
       "id": "content_position",
-      "label": "Content Position",
+      "label": "Content position",
       "options": [
         {
-          "label": "Left Center",
+          "label": "Left center",
           "value": "left-center"
         },
         {
-          "label": "Center Center",
+          "label": "Center center",
           "value": "center-center"
         },
         {
-          "label": "Top Center",
+          "label": "Top center",
           "value": "top-center"
         },
         {
-          "label": "Right Center",
+          "label": "Right center",
           "value": "right-center"
         },
         {
-          "label": "Top Left",
+          "label": "Top left",
           "value": "top-left"
         },
         {
-          "label": "Bottom Center",
+          "label": "Bottom center",
           "value": "bottom-center"
         }
       ],
