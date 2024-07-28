@@ -3,14 +3,24 @@
     "name": "header",
     "settings": [
       {
-            "type": "image_picker",
-            "id": "logo",
-            "label": "Logo Image"
-          }
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_logo_on_mobile",
+        "label": "Show Logo on Mobile",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_logo_on_desktop",
+        "label": "Show Logo on Desktop",
+        "default": true
+      }
     ],
-    "blocks": [
-      
-    ],
+    "blocks": [],
     "presets": [
       {
         "name": "header"
@@ -19,75 +29,95 @@
   }
   {% endschema %}
   
+  
 
-<div class="navbar-container">
-  <div class="navbar-alignment">
-    <img src="https://cdn.shopify.com/s/files/1/0878/2997/1246/files/nav_buttion.png?v=1722101173" alt="Button Image" width="auto" height="auto" />
-  </div>
-  <div class="logo">
-      <img src="{{ section.settings.logo | img_url}}" alt="Logo" width="auto" height="auto" />
-  </div>
-  <div class="header-content">
-    <div class="login">
-      <img src="https://cdn.shopify.com/s/files/1/0878/2997/1246/files/Icon.png?v=1722141714" alt="Button Image" width="auto" height="auto" />
-      <p>LOG IN</p>
+  <div class="navbar-container">
+    <div class="navbar-alignment">
+      <img src="https://cdn.shopify.com/s/files/1/0878/2997/1246/files/nav_buttion.png?v=1722101173" alt="Button Image" width="auto" height="auto" />
     </div>
-    <div class="button">
-      <button  class="button-book-classes">BOOK CLASSES</button>
-      <button class="button-buy-classes">BUY CLASSES</button>
+    <div class="logo {% if section.settings.show_logo_on_mobile %}show-mobile{% endif %} {% if section.settings.show_logo_on_desktop %}show-desktop{% endif %}">
+      <img src="{{ section.settings.logo | img_url }}" alt="Logo" width="auto" height="auto" />
+    </div>
+    <div class="header-content">
+      <div class="login">
+        <img src="https://cdn.shopify.com/s/files/1/0878/2997/1246/files/Icon.png?v=1722141714" alt="Button Image" width="auto" height="auto" />
+        <p>LOG IN</p>
+      </div>
+      <div class="button">
+        <button class="button-book-classes">BOOK CLASSES</button>
+        <button class="button-buy-classes">BUY CLASSES</button>
+      </div>
     </div>
   </div>
-</div>
-
+  
 <style>
   .navbar-container {
-    background-color: black;
-    font-family: 'ABeeZee', sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100vw;
-    height: 10vh;
-    padding: 0 3%;
-  }
+  background-color: black;
+  font-family: 'ABeeZee', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 10vh;
+  padding: 0 3%;
+}
 
-  .header-content {
-    display: flex;
-    gap: 1vw;
-  }
+.header-content {
+  display: flex;
+  gap: 1vw;
+}
 
-  .login {
-    display: flex;
-    align-items: center;
-    gap: 0.5vw;
-  }
+.login {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
 
-  .login p {
-    font-family: 'ABeeZee', sans-serif;
-    color: white;
-    font-size: clamp(10px, 0.8vw, 20px);
-  }
+.login p {
+  font-family: 'ABeeZee', sans-serif;
+  color: white;
+  font-size: clamp(10px, 0.8vw, 20px);
+}
 
-  .button {
-    display: flex;
-    gap: 0.5vw;
-  }
+.button {
+  display: flex;
+  gap: 0.5vw;
+}
 
-  .button>* {
-    font-size: clamp(10px, 0.6vw, 20px);
-    padding: 10px 9px 10px 9px;
-    white-space: nowrap;
-    border:0.5px solid white;
-    outline: none; 
-    font-weight: 400;
+.button>* {
+  font-size: clamp(10px, 0.6vw, 20px);
+  padding: 10px 9px 10px 9px;
+  white-space: nowrap;
+  border: 0.5px solid white;
+  outline: none;
+  font-weight: 400;
+}
+
+.button-book-classes {
+  background-color: transparent;
+  color: white;
+}
+
+.button-buy-classes {
+  background-color: white;
+  color: black;
+}
+
+/* Media query for controlling logo visibility */
+.logo {
+  display: none; /* Hide by default */
+}
+
+@media screen and (max-width: 768px) {
+  .logo.show-mobile {
+    display: block; /* Show on mobile */
   }
-  .button-book-classes{
-    background-color: transparent;
-    color: white;
+}
+
+@media screen and (min-width: 769px) {
+  .logo.show-desktop {
+    display: block; /* Show on desktop */
   }
-  button-buy-classes{
-    background-color: white;
-    color: black;
-  
-  }
+}
+
 </style>
