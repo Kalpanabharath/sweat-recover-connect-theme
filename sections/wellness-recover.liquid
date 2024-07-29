@@ -30,7 +30,7 @@
   .w-full-image {
     width: 100%;
     height: auto;
-    visibility: hidden;
+   
 
   }
   .image-wrap {
@@ -43,9 +43,7 @@
     /* Center the background image */
     background-repeat: no-repeat;
     /* Prevent the background image from repeating */
-    background-image: url('{{ section.settings.image | img_url: 'original' }}');
-    /* Set default background image using Liquid */
-  }
+ }
   .slideshow-container {
     position: relative;
   }
@@ -124,55 +122,6 @@
     /* Fills the entire box */
   }
 
-  .container-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-
-
-  }
-  .block-text-one {
-    font-size: clamp(15px, 2vw, 24px);
-    text-transform: uppercase;
-    font-weight: 400;
-
-
-  }
-  .block-text-two {
-    font-size: clamp(10px, 1vw, 16px);
-    margin-top: 3%;
-    font-weight: 400;
-
-  }
-  .block-text-three {
-    font-size: clamp(10px, 2vw, 12px);
-    text-transform: uppercase;
-    margin-top: 9%;
-    font-weight: 400;
-  }
-
-
-  .block-content {
-    height: 35%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10%;
-    border-left: 1px solid #5c5e59;
-    border-bottom: 1px solid #5c5e59;
-
-
-  }
-  .block-content:hover {
-    background-color: white;
-    color: black;
-  }
-  .block-content:hover > .block-text-three > img {
-    filter: invert(1);
-  }
 
 
   @media screen and (max-width: 768px) {
@@ -197,33 +146,6 @@
       min-width: null;
       min-height: 160px;
     }
-    .container-block{
-     
-    }
-     .block-text-two{
-      display:none;
-
-     }
-     .block-text-three{
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      color:transparent;
-
-     }
-     .block-content{
-      
-      flex-direction: row;
-      justify-content: space-between;
-      border-top: 1px solid #5c5e59;
-      height: fit-content;
-      border-bottom: none;
-      padding: 1%;
-      align-items: center;
-     }
-     .container-block{
-      justify-content: flex-end;
-     }
     
 
 
@@ -251,18 +173,18 @@
         "type": "text",
         "id": "text_before",
         "label": "Text Before",
-        "default": "FITNESS & WORKOUT"
+        "default": "wellness & Spa"
       },
       {
         "type": "richtext",
         "id": "richtext",
         "label": "Rich Text",
-        "default": "<p>over 200 inclusive <br> classes weekly</p>"
+        "default": "<br>Take wellness <br>& recovery to <br>a whole new level</p>"
       }, {
         "type": "text",
         "id": "text_after",
         "label": "Text After",
-        "default": "Full-service premium amenities. Just bring you, and we do the rest!"
+        "default": "Full-service premium amenities.Just bring you, and we do the rest!"
       }, {
         "type": "text",
         "id": "button_text",
@@ -285,15 +207,6 @@
             "id": "block_text_two",
             "label": "Block Text Two",
             "default": "Second Text"
-          }, {
-            "type": "text",
-            "id": "block_text_three",
-            "label": "Block Text Three",
-            "default": "Third Text"
-          }, {
-            "type": "image_picker",
-            "id": "block_background_image",
-            "label": "Block Background Image"
           }
         ]
       }
