@@ -41,11 +41,21 @@
             "block_text_three": "join us",
             "block_background_image": "shopify:\/\/shop_images\/Rectangle_73.jpg"
           }
+        },
+        "text_block_Q4jzmb": {
+          "type": "text_block",
+          "settings": {
+            "block_text_one": "RIDE",
+            "block_text_two": "Race past your goals and get lost in the beat.",
+            "block_text_three": "join us",
+            "block_background_image": "shopify:\/\/shop_images\/Rectangle_73_1.jpg"
+          }
         }
       },
       "block_order": [
         "text_block_PEzMkc",
-        "text_block_DzJhfU"
+        "text_block_DzJhfU",
+        "text_block_Q4jzmb"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Rectangle_73.png",
