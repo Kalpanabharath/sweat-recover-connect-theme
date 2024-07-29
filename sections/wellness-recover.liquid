@@ -26,6 +26,213 @@
 </div>
 
 
+{% style %}
+  .w-full-image {
+    width: 100%;
+    height: auto;
+    visibility: hidden;
+
+  }
+  .image-wrap {
+    width: 100%;
+    height: auto;
+    /* Ensure height adjusts based on content */
+    background-size: cover;
+    /* Make sure the background image covers the entire element */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent the background image from repeating */
+    background-image: url('{{ section.settings.image | img_url: 'original' }}');
+    /* Set default background image using Liquid */
+  }
+  .slideshow-container {
+    position: relative;
+  }
+
+  .slideshow-text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    
+    font-family: 'ABeeZee'
+    , sans-serif;
+  }
+
+  .slideshow-text-container > * {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Ensures even distribution */
+    padding: 0;
+  }
+
+  .container-text {
+    display: flex;
+    justify-content: flex-end;
+    padding: 3%;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  .hover-state-text-one {
+    font-size: clamp(10px, 0.8vw, 15px);
+    margin: 0;
+  }
+
+  .hover-state-text-two {
+    font-size: clamp(10px, 0.9vw, 15px);
+    text-transform: none;
+    margin: 0;
+  }
+
+  .hover-state-richtext {
+    font-size: clamp(20px, 4vw, 40px);
+    margin: 0;
+  }
+
+  .hover-state-button {
+    border: none;
+    padding: 10px 20px;
+    background-color: white;
+    cursor: pointer;
+    color: black;
+    width: fit-content;
+    text-transform: uppercase;
+    align-self: start;
+    /* Ensures the button doesn't stretch */
+  }
+
+  .text-content-container {
+    width: 70%;
+    height: 30%;
+    min-width: 500px;
+    max-height: 200px;
+  }
+
+  .text-content-align {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Fills the entire box */
+  }
+
+  .container-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+
+  }
+  .block-text-one {
+    font-size: clamp(15px, 2vw, 24px);
+    text-transform: uppercase;
+    font-weight: 400;
+
+
+  }
+  .block-text-two {
+    font-size: clamp(10px, 1vw, 16px);
+    margin-top: 3%;
+    font-weight: 400;
+
+  }
+  .block-text-three {
+    font-size: clamp(10px, 2vw, 12px);
+    text-transform: uppercase;
+    margin-top: 9%;
+    font-weight: 400;
+  }
+
+
+  .block-content {
+    height: 35%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+    border-left: 1px solid #5c5e59;
+    border-bottom: 1px solid #5c5e59;
+
+
+  }
+  .block-content:hover {
+    background-color: white;
+    color: black;
+  }
+  .block-content:hover > .block-text-three > img {
+    filter: invert(1);
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .slideshow-text-container{
+    flex-direction: column;
+    align-items:space-between;
+    
+    }
+    .slideshow-text-container > *{
+      width: 100%;
+      height: 50%;
+    }
+    .image-wrap{
+      background-image: url('{{ section.settings.mobile_image | img_url: 'original' }}');
+    }
+    .container-text{
+      
+      justify-content: flex-start;
+      padding: 7%;
+    }
+    .text-content-container{
+      min-width: null;
+      min-height: 160px;
+    }
+    .container-block{
+     
+    }
+     .block-text-two{
+      display:none;
+
+     }
+     .block-text-three{
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      color:transparent;
+
+     }
+     .block-content{
+      
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 1px solid #5c5e59;
+      height: fit-content;
+      border-bottom: none;
+      padding: 1%;
+      align-items: center;
+     }
+     .container-block{
+      justify-content: flex-end;
+     }
+    
+
+
+  }
+
+
+{% endstyle %}
+
+
 {% schema %}
   {
     "name": "wellness and recover",
