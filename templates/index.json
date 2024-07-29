@@ -75,10 +75,18 @@
             "wellness_recovery_block_text_one": "Sauna",
             "wellness_recovery_block_text_two": ""
           }
+        },
+        "text_block_BABP7U": {
+          "type": "text_block",
+          "settings": {
+            "wellness_recovery_block_text_one": "Somadome Mediations",
+            "wellness_recovery_block_text_two": ""
+          }
         }
       },
       "block_order": [
-        "text_block_fEA8Yb"
+        "text_block_fEA8Yb",
+        "text_block_BABP7U"
       ],
       "settings": {
         "wellness_recovery_image": "shopify:\/\/shop_images\/Rectangle_77.jpg",
