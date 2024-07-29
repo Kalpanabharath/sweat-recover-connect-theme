@@ -133,7 +133,7 @@
     </div>
     <div class="container-block">
       {% for block in section.blocks %}
-      <div class="block-content" style="background-image: url({{ block.settings.block_background_image | img_url: 'large' }});">
+      <div class="block-content" >
         <div class="block-text-one">{{ block.settings.block_text_one }}</div>
         <div class="block-text-two">{{ block.settings.block_text_two }}</div>
         <div class="block-text-three">{{ block.settings.block_text_three }}</div>
