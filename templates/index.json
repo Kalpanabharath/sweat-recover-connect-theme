@@ -65,10 +65,20 @@
         "text_after": "Full-service premium amenities. Just bring you, and we do the rest!",
         "button_text": "book classes"
       }
+    },
+    "wellness_revover_U7Utae": {
+      "type": "wellness-revover",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_77.jpg",
+        "text": "Sample Text",
+        "richtext": "<p>This is rich text<\/p>",
+        "button_text": "Click Me"
+      }
     }
   },
   "order": [
     "slideshow",
-    "hover_states_qct7dC"
+    "hover_states_qct7dC",
+    "wellness_revover_U7Utae"
   ]
 }
