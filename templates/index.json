@@ -68,6 +68,18 @@
     },
     "wellness_recover_7q4k7c": {
       "type": "wellness-recover",
+      "blocks": {
+        "text_block_fEA8Yb": {
+          "type": "text_block",
+          "settings": {
+            "wellness_recovery_block_text_one": "Sauna",
+            "wellness_recovery_block_text_two": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_fEA8Yb"
+      ],
       "settings": {
         "wellness_recovery_image": "shopify:\/\/shop_images\/Rectangle_77.jpg",
         "wellness_recovery_mobile_image": "shopify:\/\/shop_images\/Rectangle_77-img.jpg",
