@@ -18,6 +18,16 @@
     </div>
     <div class="wellness-recovery-container-block">
       <div class="wellness-recovery-block-container">
+        {% for block in section.blocks %}
+          {% if block.settings.wellness_recovery_block_text_one and block.settings.wellness_recovery_block_text_two %}
+            <div class="block-text-container">
+              <p class="block-text-one">{{ block.settings.wellness_recovery_block_text_one }}</p>
+              <p class="block-text-two">{{ block.settings.wellness_recovery_block_text_two }}</p>
+            </div>
+          {% elsif block.settings.wellness_recovery_block_text_one %}
+            <p class="block-text-one">{{ block.settings.wellness_recovery_block_text_one }}</p>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -105,11 +115,16 @@
   }
 
   .wellness-recovery-container-block {
-    /* Customize as needed */
+    display: flex;
+    justify-content: flex-end;
   }
 
   .wellness-recovery-block-container {
-    /* Customize as needed */
+    background-color: red;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
   }
 
   @media screen and (max-width: 768px) {
