@@ -32,10 +32,20 @@
             "block_text_three": "join us",
             "block_background_image": "shopify:\/\/shop_images\/Rectangle_73.png"
           }
+        },
+        "text_block_DzJhfU": {
+          "type": "text_block",
+          "settings": {
+            "block_text_one": "HIIT",
+            "block_text_two": "HIIT hard while having the time of your life.",
+            "block_text_three": "join us",
+            "block_background_image": "shopify:\/\/shop_images\/Rectangle_73.jpg"
+          }
         }
       },
       "block_order": [
-        "text_block_PEzMkc"
+        "text_block_PEzMkc",
+        "text_block_DzJhfU"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Rectangle_73.png",
