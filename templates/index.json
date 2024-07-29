@@ -128,11 +128,43 @@
         "wellness_recovery_text_after": "Full-service premium amenities. Just bring you, and we do the rest!",
         "wellness_recovery_button_text": "Book Classes"
       }
+    },
+    "location_4VEExp": {
+      "type": "location",
+      "blocks": {
+        "location_pFWPyL": {
+          "type": "location",
+          "settings": {
+            "title": "THE WELL",
+            "description": "Porem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "address": "486 Front St W, Toronto, ON M5V 0V2",
+            "phone": "647-372-0225",
+            "image": "shopify:\/\/shop_images\/Rectangle_76.png"
+          }
+        },
+        "location_YbjGwU": {
+          "type": "location",
+          "settings": {
+            "title": "THE WELL",
+            "description": "Porem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "address": "486 Front St W, Toronto, ON M5V 0V2",
+            "phone": "647-372-0225",
+            "image": "shopify:\/\/shop_images\/Rectangle_77.png"
+          }
+        }
+      },
+      "block_order": [
+        "location_pFWPyL",
+        "location_YbjGwU"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "slideshow",
     "hover_states_qct7dC",
-    "wellness_recover_7q4k7c"
+    "wellness_recover_7q4k7c",
+    "location_4VEExp"
   ]
 }
