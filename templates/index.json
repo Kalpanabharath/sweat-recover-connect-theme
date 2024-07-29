@@ -69,12 +69,12 @@
     "wellness_recover_7q4k7c": {
       "type": "wellness-recover",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Rectangle_77.jpg",
-        "mobile_image": "shopify:\/\/shop_images\/Rectangle_77-img.jpg",
-        "text_before": "wellness & Spa",
-        "richtext": "<p>Take wellness <\/p><p>& recovery to <\/p><p>a whole new level<\/p>",
-        "text_after": "Full-service premium amenities.\u2028Just bring you, and we do the rest!",
-        "button_text": "book classes"
+        "wellness_recovery_image": "shopify:\/\/shop_images\/Rectangle_77.jpg",
+        "wellness_recovery_mobile_image": "shopify:\/\/shop_images\/Rectangle_77-img.jpg",
+        "wellness_recovery_text_before": "Wellness & Spa",
+        "wellness_recovery_richtext": "<p>Take wellness <br\/>& recovery to <br\/>a whole new level<\/p>",
+        "wellness_recovery_text_after": "Full-service premium amenities. Just bring you, and we do the rest!",
+        "wellness_recovery_button_text": "Book Classes"
       }
     }
   },
