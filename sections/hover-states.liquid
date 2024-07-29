@@ -28,12 +28,11 @@
   }
 
   .container-text {
-    
     display: flex;
     justify-content: flex-end;
     padding: 3%;
     text-transform: uppercase;
-    color:white;
+    color: white;
   }
 
   .hover-state-text-one {
@@ -66,7 +65,8 @@
   .text-content-container {
     width: 70%;
     height: 30%;
-    
+    min-width: 500px;
+    max-height: 200px;
   }
 
   .text-content-align {
@@ -75,6 +75,32 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Fills the entire box */
+  }
+
+  .container-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .block-content {
+    width: 100%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+  }
+
+  .block-text-one,
+  .block-text-two,
+  .block-text-three {
+    margin: 5px 0;
   }
 </style>
 
@@ -105,7 +131,15 @@
         </div>
       </div>
     </div>
-    <div class="container-block"></div>
+    <div class="container-block">
+      {% for block in section.blocks %}
+      <div class="block-content" style="background-image: url({{ block.settings.block_background_image | img_url: 'large' }});">
+        <div class="block-text-one">{{ block.settings.block_text_one }}</div>
+        <div class="block-text-two">{{ block.settings.block_text_two }}</div>
+        <div class="block-text-three">{{ block.settings.block_text_three }}</div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 
@@ -146,6 +180,37 @@
       "id": "button_text",
       "label": "Button Text",
       "default": "book classes"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Text Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_text_one",
+          "label": "Block Text One",
+          "default": "First Text"
+        },
+        {
+          "type": "text",
+          "id": "block_text_two",
+          "label": "Block Text Two",
+          "default": "Second Text"
+        },
+        {
+          "type": "text",
+          "id": "block_text_three",
+          "label": "Block Text Three",
+          "default": "Third Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_background_image",
+          "label": "Block Background Image"
+        }
+      ]
     }
   ],
   "presets": [
