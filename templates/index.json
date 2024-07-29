@@ -29,7 +29,8 @@
           "settings": {
             "block_text_one": "YOGA",
             "block_text_two": "Find your breath, flow, and turn up the heat!",
-            "block_text_three": "join us"
+            "block_text_three": "join us",
+            "block_background_image": "shopify:\/\/shop_images\/Rectangle_73.png"
           }
         }
       },
