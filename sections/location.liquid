@@ -1,71 +1,77 @@
 {% schema %}
-    {
-      "name": "Location Section",
-      "settings": [
-        {
-          "type": "header",
-          "content": "Location Section Settings"
-        }
-      ],
-      "blocks": [
-        {
-          "type": "location",
-          "name": "Location",
-          "settings": [
-            {
-              "type": "text",
-              "id": "title",
-              "label": "Title",
-              "default": "THE WELL"
-            },
-            {
-              "type": "textarea",
-              "id": "description",
-              "label": "Description",
-              "default": "Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
-            },
-            {
-              "type": "text",
-              "id": "address",
-              "label": "Address",
-              "default": "486 Front St W, Toronto, ON M5V 0V2"
-            },
-            {
-              "type": "text",
-              "id": "phone",
-              "label": "Phone",
-              "default": "647-372-0225"
-            },
-            {
-              "type": "image_picker",
-              "id": "image",
-              "label": "Image"
-            }
-          ]
-        },
-        {
-          "type": "service",
-          "name": "Service",
-          "settings": [
-            {
-              "type": "text",
-              "id": "service_name",
-              "label": "Service Name",
-              "default": "Service 1"
-            }
-          ]
-        }
-      ],
-      "presets": [
-        {
-          "name": "Default",
-          "category": "Custom"
-        }
-      ]
-    }
-  {% endschema %}
-  
-  
+  {
+    "name": "Location Section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Location Section Settings"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "location",
+        "name": "Location",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "THE WELL"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "default": "Porem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. "
+          },
+          {
+            "type": "text",
+            "id": "address",
+            "label": "Address",
+            "default": "486 Front St W, Toronto, ON M5V 0V2"
+          },
+          {
+            "type": "text",
+            "id": "phone",
+            "label": "Phone",
+            "default": "647-372-0225"
+          }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "serviceone",
+            "label": "Service One",
+            "default": "Service 1"
+          }, {
+            "type": "text",
+            "id": "servicetwo",
+            "label": "Service two",
+            "default": "Service 2"
+          }, {
+            "type": "text",
+            "id": "servicethree",
+            "label": "Service Three",
+            "default": "Service 3"
+          }, {
+            "type": "text",
+            "id": "servicefour",
+            "label": "Service Four",
+            "default": "Service 4"
+          }
+
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Default",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}
 
 <div class="location-section">
   {% for block in section.blocks %}
@@ -88,16 +94,16 @@
         <div class="services">
           <h3>Exclusive Services</h3>
           <ul>
-            {% for service in block.settings.services %}
-              <li>{{ service.text }}</li>
-            {% endfor %}
+            <li>{{ block.settings.serviceone }}</li>
+            <li>{{ block.settings.servicetwo }}</li>
+            <li>{{ block.settings.servicethree }}</li>
+            <li>{{ block.settings.servicefour }}</li>
           </ul>
         </div>
       </div>
     </div>
   {% endfor %}
 </div>
-
 
 <style>
   .location-section {
