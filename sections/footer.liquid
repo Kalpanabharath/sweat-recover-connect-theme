@@ -112,7 +112,6 @@ body {
   padding: 0 20px;
 }
 
-
 .footer-sections {
   display: flex;
   flex-wrap: wrap;
@@ -126,12 +125,12 @@ body {
 }
 
 .footer-section h4 {
-  font-size: clamp(7px, .5vw, 15px)
+  font-size: clamp(7px, 5vw, 15px);
   font-weight: bold;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color:#C79D5B;
+  color: #C79D5B;
 }
 
 .footer-section ul {
@@ -162,8 +161,8 @@ body {
   width: 100%;
   padding: 12px 15px;
   margin: 10px 0;
-  background-color:transparent;
-  border-bottom: 1px solid #aaa ;
+  background-color: transparent;
+  border-bottom: 1px solid #aaa;
   color: #000;
   font-size: 14px;
   outline: none;
@@ -172,7 +171,7 @@ body {
 .footer-section .button {
   display: inline-block;
   padding: 12px 20px;
-  background-color:white;
+  background-color: white;
   border-bottom: none;
   color: #000;
   text-decoration: none;
@@ -183,7 +182,7 @@ body {
   text-align: center;
   padding: 20px 40px;
   border-top: 1px solid #333;
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -202,28 +201,31 @@ body {
   align-content: center;
   border-radius: 50%;
 }
-#yellow{
-  color:#C79D5B;
+
+#yellow {
+  color: #C79D5B;
 }
 
-#withimage-baground{
-
+#withimage-baground {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 }
-button[type="submit"]>img{
+
+button[type="submit"]>img {
   filter: invert(1);
 }
-#withimage-baground>.button{
+
+#withimage-baground > .button {
   width: fit-content;
 }
-#withimage-baground> img{
+
+#withimage-baground > img {
   position: absolute;
-  right:0px;
+  right: 0px;
   margin-top: 3%;
 }
+
 @media (max-width: 768px) {
   .footer-sections {
     flex-direction: column;
@@ -233,6 +235,28 @@ button[type="submit"]>img{
   .footer-section {
     text-align: center;
     margin: 10px 0;
+  }
+
+  #withimage-baground {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #withimage-baground > img {
+    position: relative;
+    right: auto;
+    margin-top: 20px;
+    width: 50%;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-media a {
+    margin: 5px 10px;
   }
 }
 
