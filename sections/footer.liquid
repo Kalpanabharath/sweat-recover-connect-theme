@@ -223,18 +223,20 @@
     background-color: transparent;
     border-bottom: 1px solid #aaa;
     color: #000;
-    font-size: 14px;
+    font-size: clamp(10px, 1.5vw, 15px);
     outline: none;
   }
 
   .footer-section .button {
     display: inline-block;
-    padding: 12px 20px;
+    padding: 18px 20px;
     background-color: white;
     border-bottom: none;
     color: #000;
     text-decoration: none;
-    font-size: 14px;
+    font-size: clamp(10px, 1.5vw, 15px);
+    z-index: 3;
+    
   }
 
   .footer-bottom {
@@ -259,6 +261,7 @@
     padding: 10px;
     align-content: center;
     border-radius: 50%;
+
   }
 
   #yellow {
@@ -290,7 +293,10 @@
 
 
   @media (max-width: 768px) {
-
+    .footer-section .button{
+      margin-right:30% ;
+      padding: 10px 10px;
+    }
     .form {
       padding: 15%;
     }
@@ -343,8 +349,9 @@
     #withimage-baground > img {
       position: absolute;
       right: 12%;
-      margin-top: 20px;
-      width: 20%;
+      margin-top: 32px;
+      width: 30%;
+      z-index: 1;
       
 
     }
