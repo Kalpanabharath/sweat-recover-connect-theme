@@ -1,4 +1,3 @@
-
 {% style %}
   .w-full-image {
     width: 100%;
@@ -9,17 +8,11 @@
   .image-wrap {
     width: 100%;
     height: auto;
-    /* Ensure height adjusts based on content */
     background-size: cover;
-    /* Make sure the background image covers the entire element */
     background-position: center;
-    /* Center the background image */
     background-repeat: no-repeat;
-    /* Prevent the background image from repeating */
     background-image: url('{{ section.settings.image | img_url: 'original' }}');
-
-    /* Set default background image using Liquid */
-    transition:all 2s ease;
+    transition: all 2s ease;
   }
   .slideshow-container {
     position: relative;
@@ -32,7 +25,7 @@
     width: 100%;
     height: 100%;
     display: flex;
-    
+
     font-family: 'ABeeZee'
     , sans-serif;
   }
@@ -43,7 +36,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Ensures even distribution */
     padding: 0;
   }
 
@@ -80,7 +72,7 @@
     width: fit-content;
     text-transform: uppercase;
     align-self: start;
-    /* Ensures the button doesn't stretch */
+
   }
 
   .text-content-container {
@@ -96,7 +88,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Fills the entire box */
+
   }
 
   .container-block {
@@ -138,7 +130,7 @@
     padding: 10%;
     border-left: 1px solid #5c5e59;
     border-bottom: 1px solid #5c5e59;
-    transition:all 2s ease;
+    transition: all 2s ease;
 
 
   }
@@ -146,8 +138,8 @@
     background-color: white;
     color: black;
   }
-  .block-content:hover> .block-text-one{
-     color:black;
+  .block-content:hover > .block-text-one {
+    color: black;
   }
   .block-content:hover > .block-text-three > img {
     filter: invert(1);
@@ -155,58 +147,55 @@
 
 
   @media screen and (max-width: 768px) {
-    .slideshow-text-container{
-    flex-direction: column;
-    align-items:space-between;
-    
+    .slideshow-text-container {
+      flex-direction: column;
+      align-items: space-between;
+
     }
-    .slideshow-text-container > *{
+    .slideshow-text-container > * {
       width: 100%;
       height: 50%;
     }
-    .image-wrap{
+    .image-wrap {
       background-image: url('{{ section.settings.mobile_image | img_url: 'original' }}');
     }
-    .container-text{
-      
+    .container-text {
+
       justify-content: flex-start;
       padding: 7%;
     }
-    .text-content-container{
+    .text-content-container {
       min-width: null;
       min-height: 160px;
     }
-    .container-block{
-     
-    }
-     .block-text-two{
-      display:none;
-
-     }
-     .block-text-three{
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      color:transparent;
-
-     }
-     .block-content{
-      
-      flex-direction: row;
-      justify-content: space-between;
-      border-top: 1px solid #5c5e59;
-      height: fit-content;
-      border-bottom: none;
-      padding: 1%;
-      align-items: center;
-     }
-     .container-block{
-      justify-content: flex-end;
-     }
-    
-
+    .container-block {}
+  .block-text-two {
+    display: none;
 
   }
+  .block-text-three {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+
+  }
+  .block-content {
+
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid #5c5e59;
+    height: fit-content;
+    border-bottom: none;
+    padding: 1%;
+    align-items: center;
+  }
+  .container-block {
+    justify-content: flex-end;
+  }
+
+
+}
 
 
 {% endstyle %}
@@ -338,15 +327,11 @@
         
     
         const imageUrl = block.getAttribute('data-image');
-        console.log('Updating image to:', imageUrl); // Debugging: Check URL in the console
         imageWrap.style.backgroundImage = `url(${imageUrl})`;
       });
   
       block.addEventListener('mouseleave', function() {
-       
-       
-        console.log('Resetting to default image:', defaultImageUrl); // Debugging: Check URL in the console
-        imageWrap.style.backgroundImage = `url(${defaultImageUrl})`;
+      imageWrap.style.backgroundImage = `url(${defaultImageUrl})`;
       });
     });
   });
