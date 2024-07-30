@@ -175,6 +175,7 @@
   }
   .services > h3 {
     color: #C79D5B;
+    font-size: clamp(15px, 2vw, 12px);
   }
 
   .services ul {
@@ -198,7 +199,17 @@
   @media screen and (max-width: 768px) {
     .location-section {
       flex-direction: column;
+      height: fit-content;
+      gap:0px;
 
+    }
+    .location-info{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+    ul{
+      display:flex;
     }
     .location {
       min-height: 550px;

@@ -17,7 +17,9 @@
     background-repeat: no-repeat;
     /* Prevent the background image from repeating */
     background-image: url('{{ section.settings.image | img_url: 'original' }}');
+
     /* Set default background image using Liquid */
+    transition:all 2s ease;
   }
   .slideshow-container {
     position: relative;
@@ -113,7 +115,7 @@
 
 
   }
-  .block-text-two {
+  .block-text-twoo {
     font-size: clamp(10px, 1vw, 16px);
     margin-top: 3%;
     font-weight: 400;
@@ -136,12 +138,16 @@
     padding: 10%;
     border-left: 1px solid #5c5e59;
     border-bottom: 1px solid #5c5e59;
+    transition:all 2s ease;
 
 
   }
   .block-content:hover {
     background-color: white;
     color: black;
+  }
+  .block-content:hover> .block-text-one{
+     color:black;
   }
   .block-content:hover > .block-text-three > img {
     filter: invert(1);
@@ -234,7 +240,7 @@
           data-image="{{ block.settings.block_background_image | img_url: 'original' }}"
           id="block-{{ forloop.index }}">
           <div class="block-text-one">{{ block.settings.block_text_one }}</div>
-          <div class="block-text-two">{{ block.settings.block_text_two }}</div>
+          <div class="block-text-twoo">{{ block.settings.block_text_two }}</div>
           <div class="block-text-three">{{ block.settings.block_text_three }}
             <img
               src="https://cdn.shopify.com/s/files/1/0878/2997/1246/files/Rectangle_6.png?v=1722229214"
