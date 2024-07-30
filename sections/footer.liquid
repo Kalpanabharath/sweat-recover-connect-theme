@@ -1,8 +1,16 @@
 <footer class="footer">
   <div class="footer-container">
-    <div class="footer-sections">
+    <div class="footer-sections footer-section-one">
       <div class="footer-section">
-        <h4>FITNESS</h4>
+        <div class="head-div">
+          <h4>FITNESS</h4>
+         <img
+      src="https://cdn.shopify.com/s/files/1/0878/2997/1246/files/Vector.png?v=1722312881"
+      alt="mobile image"
+      width="15px"
+      height="15px" />
+        </div>
+        
         <ul>
           <li><a href="#">Spin</a></li>
           <li><a href="#">Yoga</a></li>
@@ -11,7 +19,14 @@
         </ul>
       </div>
       <div class="footer-section">
-        <h4>SPA</h4>
+        <div class="head-div">
+          <h4>SPA</h4>
+         <img
+      src="https://cdn.shopify.com/s/files/1/0878/2997/1246/files/Vector.png?v=1722312881"
+      alt="mobile image"
+      width="15px"
+      height="15px" />
+        </div>
         <ul>
           <li><a href="#">Restore & Recover</a></li>
           <li><a href="#">Infrared Sauna</a></li>
@@ -20,7 +35,15 @@
         </ul>
       </div>
       <div class="footer-section">
-        <h4>TONIC HOUSE</h4>
+        <div class="head-div">
+          <h4>TONIC HOUSE</h4>
+         <img
+      src="https://cdn.shopify.com/s/files/1/0878/2997/1246/files/Vector.png?v=1722312881"
+      alt="mobile image"
+      width="15px"
+      height="15px" />
+        </div>
+        
         <ul>
           <li><a href="#">Workspace</a></li>
           <li><a href="#">Bar & Cafe</a></li>
@@ -29,7 +52,15 @@
         </ul>
       </div>
       <div class="footer-section">
-        <h4>ABOUT S&T</h4>
+        <div class="head-div">
+          <h4>ABOUT S&T</h4>
+         <img
+      src="https://cdn.shopify.com/s/files/1/0878/2997/1246/files/Vector.png?v=1722312881"
+      alt="mobile image"
+      width="15px"
+      height="15px" />
+        </div>
+        
         <ul>
           <li><a href="#">Our Story</a></li>
           <li><a href="#">Locations</a></li>
@@ -38,18 +69,21 @@
       </div>
     </div>
     <div class="footer-sections">
-      <div class="footer-section">
-        <h4 style="color:white">YONGE / SHUTER</h4>
-        <p id="yellow">225 Yonge Street, Toronto ON M5B 1N8<br>647-372-0225</p>
-        <h4 style="color:white">THE WELL</h4>
-        <p id="yellow">458 Front St W, Toronto, ON M5V 0V2<br>647-372-0225</p>
+      <div class="flexfooter" style="display:flex">
+        <div class="footer-section">
+          <h4 style="color:white">YONGE / SHUTER</h4>
+          <p id="yellow">225 Yonge Street, Toronto ON M5B 1N8<br>647-372-0225</p>
+          <h4 style="color:white">THE WELL</h4>
+          <p id="yellow">458 Front St W, Toronto, ON M5V 0V2<br>647-372-0225</p>
+        </div>
+        <div class="footer-section">
+         
+          <p>OPEN:<br>Monday - Thursday: 5:45 AM - 10 PM<br>Friday: 5:45 AM - 9 PM<br>Saturday: 7 AM - 7:30 PM<br>Sunday: 7:45 AM - 9 PM</p>
+          <p>OPEN:<br>Monday - Thursday: 5:45 AM - 10 PM<br>Friday: 5:45 AM - 9 PM<br>Saturday: 7 AM - 7:30 PM<br>Sunday: 7:45 AM - 9 PM</p>
+        </div>
       </div>
-      <div class="footer-section">
-       
-        <p>OPEN:<br>Monday - Thursday: 5:45 AM - 10 PM<br>Friday: 5:45 AM - 9 PM<br>Saturday: 7 AM - 7:30 PM<br>Sunday: 7:45 AM - 9 PM</p>
-        <p>OPEN:<br>Monday - Thursday: 5:45 AM - 10 PM<br>Friday: 5:45 AM - 9 PM<br>Saturday: 7 AM - 7:30 PM<br>Sunday: 7:45 AM - 9 PM</p>
-      </div>
-      <div class="footer-section">
+
+      <div class="footer-section form">
         <h4 style="color:white;">LET'S GET CONNECTED</h4>
         <form>
           <input type="text" name="name" placeholder="Name">
@@ -99,15 +133,29 @@
 body {
   font-family: Arial, sans-serif;
 }
+.flexfooter{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap:10px;
+  
+}
+.flexfooter .footer-section{
+  text-align: left;
+  
+
+}
+
 
 .footer {
   background-color: #000;
   color: #fff;
-  padding: 40px 0;
+  width: 100vw;
 }
 
 .footer-container {
-  max-width: 100vw;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -225,38 +273,83 @@ button[type="submit"]>img {
   right: 0px;
   margin-top: 3%;
 }
+.footer-section-one>.footer-section>.head-div>img{
+   display:none;
+}
+
 
 @media (max-width: 768px) {
+
+.form{
+  padding: 15%;
+}
+
+.footer-section-one>.footer-section>.head-div{
+   display: flex;
+   justify-content: space-between;
+    width: 100%;
+}
+.footer-section-one>.footer-section>.head-div>img{
+   display:block;
+}
+
+.footer-section-one>.footer-section{
+border-bottom: 1px solid #2d2d2b;
+margin-top: 10px;
+}
+ .footer-sections{
+  width: 100%;
+  flex-wrap:nowrap !important;
+}
+.footer-section{
+  width: 100vw;
+}
+.footer-section-one>.footer-section>ul{
+display:none;
+}
+.footer-section-one>.footer-section>.head-div>img{
+  display:block;
+}
   .footer-sections {
     flex-direction: column;
     align-items: center;
-  }
+    display:block;
+  } 
 
   .footer-section {
+    width:100%;
     text-align: center;
-    margin: 10px 0;
+    margin: 0px ;
   }
 
   #withimage-baground {
     flex-direction: column;
     align-items: center;
+    height:150px;
   }
 
   #withimage-baground > img {
-    position: relative;
-    right: auto;
+    position: absolute;
+    right: 12%;
     margin-top: 20px;
-    width: 50%;
+    width: 20%;
+    
   }
 
   .footer-bottom {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+ 
+    gap:20px;
+    padding: 20px;
   }
 
   .social-media a {
     margin: 5px 10px;
+  }
+  .footer-container{
+    padding:10%;
   }
 }
 
